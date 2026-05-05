@@ -14,13 +14,13 @@ const GemsSystem = ({ packages, onPkgChange, onAddPackage, onRemovePackage, tota
 
     return (
         <div className="glass-card fade-in">
-            <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gem/20 flex items-center justify-center">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-gem/20 flex items-center justify-center shrink-0">
                     <svg className="w-4 h-4 text-gem" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3l2.5 4.5L20 9l-4 3.5L17 18l-5-3-5 3 1-5.5L4 9l5.5-1.5z" />
                     </svg>
                 </div>
-                <h2 className="text-lg font-semibold text-text-primary">Gem Top-Up Packages</h2>
+                <h2 className="text-base sm:text-lg font-semibold text-text-primary">Gem Top-Up Packages</h2>
                 <button
                     onClick={onAddPackage}
                     className="ml-auto px-3 py-1 rounded-lg bg-gem/15 text-gem text-xs font-medium border border-gem/25 hover:bg-gem/25 transition-colors cursor-pointer"

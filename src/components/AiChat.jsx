@@ -161,7 +161,7 @@ const AiChat = ({ calcData }) => {
             {/* Floating button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer z-50 ${isOpen
+                className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer z-50 ${isOpen
                     ? 'bg-white/10 border border-border rotate-0'
                     : 'bg-accent hover:bg-accent-light pulse-glow'
                     }`}
@@ -180,7 +180,7 @@ const AiChat = ({ calcData }) => {
 
             {/* Chat panel */}
             {isOpen && (
-                <div className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-3rem)] h-[32rem] max-h-[calc(100vh-8rem)] rounded-2xl border border-border shadow-2xl flex flex-col overflow-hidden z-50 fade-in"
+                <div className="fixed bottom-20 right-3 left-3 sm:left-auto sm:bottom-24 sm:right-6 sm:w-96 max-h-[calc(100vh-6rem)] sm:max-h-[calc(100vh-8rem)] h-[28rem] sm:h-[32rem] rounded-2xl border border-border shadow-2xl flex flex-col overflow-hidden z-50 fade-in"
                     style={{ background: 'rgba(10, 10, 26, 0.95)', backdropFilter: 'blur(20px)' }}
                 >
                     {/* Header */}

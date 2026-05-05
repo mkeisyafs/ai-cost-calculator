@@ -217,23 +217,23 @@ function App() {
     const activeLabel = activeTab === 'all' ? 'All Packages' : (perPkgResults.find(p => p.pkgId === activeTab)?.pkgLabel || 'All');
 
     return (
-        <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen py-4 px-3 sm:py-6 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="max-w-7xl mx-auto mb-8">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="max-w-7xl mx-auto mb-5 sm:mb-8">
+                <div className="flex flex-col gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold gradient-text">AI Cost Calculator</h1>
-                        <p className="text-text-secondary text-sm mt-1">
+                        <h1 className="text-2xl sm:text-3xl font-bold gradient-text">AI Cost Calculator</h1>
+                        <p className="text-text-secondary text-xs sm:text-sm mt-1">
                             Estimate costs &amp; profit from AI model usage with gems and currency conversion
                         </p>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                         <div className="flex items-center rounded-lg border border-border overflow-hidden bg-white/5">
                             {Object.values(CURRENCIES).map(c => (
                                 <button
                                     key={c.code}
                                     onClick={() => setDisplayCurrency(c.code)}
-                                    className={`px-3 py-2 text-xs font-medium transition-all duration-200 cursor-pointer ${displayCurrency === c.code ? 'bg-accent text-white' : 'text-text-muted hover:text-text-primary hover:bg-white/5'
+                                    className={`px-2 sm:px-3 py-2 text-[10px] sm:text-xs font-medium transition-all duration-200 cursor-pointer ${displayCurrency === c.code ? 'bg-accent text-white' : 'text-text-muted hover:text-text-primary hover:bg-white/5'
                                         }`}
                                     title={c.name}
                                 >
@@ -243,21 +243,21 @@ function App() {
                         </div>
                         <button
                             onClick={() => exportToPdf({ perPkgResults, allResults, gemPackages, totalGems, totalSpent, selectedModels, manualPricing, manualGemConfig, useManualPricing, useGemSystem, displayCurrency, rates })}
-                            className="px-4 py-2 rounded-lg bg-accent/15 border border-accent/30 hover:bg-accent/25 text-accent-light hover:text-white text-sm font-medium transition-all duration-200 cursor-pointer"
+                            className="px-3 sm:px-4 py-2 rounded-lg bg-accent/15 border border-accent/30 hover:bg-accent/25 text-accent-light hover:text-white text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer"
                             id="export-pdf-btn"
                         >
                             📄 PDF
                         </button>
-                        <button onClick={handleReset} className="px-4 py-2 rounded-lg bg-white/5 border border-border hover:bg-white/10 text-text-secondary hover:text-text-primary text-sm font-medium transition-all duration-200 cursor-pointer" id="reset-btn">
+                        <button onClick={handleReset} className="px-3 sm:px-4 py-2 rounded-lg bg-white/5 border border-border hover:bg-white/10 text-text-secondary hover:text-text-primary text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer" id="reset-btn">
                             ↺ Reset
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
                 {/* Left Column */}
-                <div className="lg:col-span-5 space-y-5">
+                <div className="lg:col-span-5 space-y-4 sm:space-y-5">
                     <ModelSearch
                         onModelsSelected={handleModelSelected}
                         selectedModels={selectedModels}
@@ -377,10 +377,10 @@ function App() {
                 </div>
 
                 {/* Right Column */}
-                <div className="lg:col-span-7 space-y-5">
+                <div className="lg:col-span-7 space-y-4 sm:space-y-5">
                     {/* Package tabs */}
                     {gemPackages.length > 1 && useGemSystem && (
-                        <div className="flex items-center gap-1.5 flex-wrap">
+                        <div className="flex items-center gap-1.5 flex-wrap overflow-x-auto pb-1">
                             <button
                                 onClick={() => setActiveTab('all')}
                                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${activeTab === 'all' ? 'bg-accent text-white' : 'bg-white/5 text-text-muted hover:text-text-primary hover:bg-white/10 border border-border'}`}
@@ -402,7 +402,7 @@ function App() {
                     <ResultsDisplay results={activeResult} rates={rates} currencyCtx={currencyCtx} label={activeLabel} gatewayFee={gatewayFee} />
                     <ProfitChart modelCosts={activeResult.modelCosts} gemRevenue={activeResult.netGemRevenueUsd ?? activeResult.gemRevenueUsd} currencyCtx={currencyCtx} />
 
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
                         <div className="glass-card-compact text-center fade-in">
                             <div className="text-xs text-text-muted mb-1">Cost / 1K Tokens</div>
                             <div className="text-sm font-bold text-loss">

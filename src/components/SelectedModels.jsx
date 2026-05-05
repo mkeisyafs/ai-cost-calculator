@@ -37,7 +37,7 @@ const SelectedModels = ({ models, totalGems, onUpdateModel, onRemoveModel, curre
                             <div className="flex items-center justify-between mb-3">
                                 <div className="min-w-0 flex-1">
                                     <div className="text-sm font-medium text-text-primary truncate">{model.name}</div>
-                                    <div className="text-xs text-text-muted truncate">
+                                    <div className="text-[10px] sm:text-xs text-text-muted truncate">
                                         {model.id} · in: {fmtPricePerM(model.pricing?.prompt)}/M · out: {fmtPricePerM(model.pricing?.completion)}/M
                                     </div>
                                 </div>

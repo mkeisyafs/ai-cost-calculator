@@ -58,7 +58,7 @@ const ProfitChart = ({ modelCosts, gemRevenue, currencyCtx }) => {
                 <span className="ml-auto text-xs text-text-muted">{dc.flag} {dc.code}</span>
             </div>
 
-            <div className="h-64">
+            <div className="h-48 sm:h-64">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
                         <XAxis

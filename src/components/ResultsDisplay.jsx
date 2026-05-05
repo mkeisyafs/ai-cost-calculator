@@ -29,37 +29,37 @@ const ResultsDisplay = ({ results, rates, currencyCtx, label, gatewayFee }) => {
 
     return (
         <div className="glass-card fade-in">
-            <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
                     <svg className="w-4 h-4 text-accent-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <h2 className="text-lg font-semibold text-text-primary">Results</h2>
-                {label && <span className="text-xs text-text-muted">— {label}</span>}
-                <span className="ml-auto text-xs px-2 py-0.5 rounded-full bg-accent/15 text-accent-light border border-accent/30">
+                <h2 className="text-base sm:text-lg font-semibold text-text-primary">Results</h2>
+                {label && <span className="text-xs text-text-muted hidden sm:inline">— {label}</span>}
+                <span className="ml-auto text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-accent/15 text-accent-light border border-accent/30">
                     {dc.flag} {dc.code}
                 </span>
                 {useGemSystem && (
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-gem/15 text-gem border border-gem/30">
+                    <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-gem/15 text-gem border border-gem/30">
                         Gem Mode
                     </span>
                 )}
             </div>
 
             {/* Token Summary */}
-            <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                 <div className="glass-card-compact text-center">
-                    <div className="text-xs text-text-muted mb-1">Input Tokens</div>
-                    <div className="text-sm font-semibold text-blue-400">{totalInputTokens.toLocaleString()}</div>
+                    <div className="text-[10px] sm:text-xs text-text-muted mb-1">Input Tokens</div>
+                    <div className="text-xs sm:text-sm font-semibold text-blue-400">{totalInputTokens.toLocaleString()}</div>
                 </div>
                 <div className="glass-card-compact text-center">
-                    <div className="text-xs text-text-muted mb-1">Output Tokens</div>
-                    <div className="text-sm font-semibold text-purple-400">{totalOutputTokens.toLocaleString()}</div>
+                    <div className="text-[10px] sm:text-xs text-text-muted mb-1">Output Tokens</div>
+                    <div className="text-xs sm:text-sm font-semibold text-purple-400">{totalOutputTokens.toLocaleString()}</div>
                 </div>
                 <div className="glass-card-compact text-center">
-                    <div className="text-xs text-text-muted mb-1">Total Tokens</div>
-                    <div className="text-sm font-semibold text-accent-light">{totalTokens.toLocaleString()}</div>
+                    <div className="text-[10px] sm:text-xs text-text-muted mb-1">Total Tokens</div>
+                    <div className="text-xs sm:text-sm font-semibold text-accent-light">{totalTokens.toLocaleString()}</div>
                 </div>
             </div>
 
@@ -163,7 +163,7 @@ const ResultsDisplay = ({ results, rates, currencyCtx, label, gatewayFee }) => {
             {/* Multi-Currency Table */}
             <div className="pt-3 border-t border-border">
                 <div className="text-xs text-text-muted uppercase tracking-wide font-medium mb-2">All Currencies</div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
                     <table className="w-full text-xs">
                         <thead>
                             <tr className="text-text-muted">
